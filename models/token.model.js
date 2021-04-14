@@ -14,8 +14,8 @@ const tokenSchema = new Schema(
       type: Number
     },
     user_id: {
-      type: Schema.Types.ObjectId,
-      ref: 'user'
+      type: mongoose.Types.ObjectId,
+      ref: 'users'
     }
   }
 )

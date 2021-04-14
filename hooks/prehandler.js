@@ -1,4 +1,4 @@
-const { getToken } = require('../repos/token.repo')
+const { getToken, getTokenWithUser } = require('../repos/token.repo')
 const { ts } = require('../helpers/string')
 const { NO_TOKEN, INVALID_TOKEN } = require('../configs/constant').ERRORS
 // const { tracer, opentracing } = require('../helpers/logger.jaeger')
@@ -15,7 +15,7 @@ exports.verifyToken = async (req, res) => {
   */
 
   const reqToken = req.headers.token
-  if (process.env.NODE_ENV === 'localhost') return true
+  if (process.env.NODE_ENV === 'localhost' && false) return true
 
   if (!reqToken) {
     res.code(401).send({
@@ -40,6 +40,7 @@ exports.verifyToken = async (req, res) => {
 
   // assign something to req object here
   // req.token = token; // then try to print on controller handler
-  // let tokenWithUser = await getTokenWithUser({ token: reqToken });
+  // const tokenWithUser = await getTokenWithUser({ token: reqToken })
+  // console.log(tokenWithUser)
   // req.tokenWithUser = tokenWithUser;
 }

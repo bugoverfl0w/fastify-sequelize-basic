@@ -8,14 +8,14 @@ exports.getPosts = async () => {
     return posts
   }
 
-  posts = await Post.findAll()
+  posts = await Post.find()
   await PostRedis.setPosts(posts, CACHE.HOUR(10000), true)
 
   return posts
 }
 
 exports.getPost = async (id) => {
-  return (await Post.findByPk(id))
+  return (await Post.find({ _id: id }))
 }
 
 exports.createPost = async (data) => {
