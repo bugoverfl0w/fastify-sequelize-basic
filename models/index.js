@@ -17,5 +17,4 @@ fs
     db[key] = model[Object.keys(model)[0]]
   })
 
-console.log(db)
 module.exports = db
