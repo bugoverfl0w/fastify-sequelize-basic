@@ -10,11 +10,12 @@ fs
   })
   .forEach(file => {
     const model = require(path.join(__dirname, file))
-    const key = file.replace(/.model.js$/g, '').replace(/\./g, '')
+    const key = file.replace(/.model.js$/g, '')
       .split('.')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join('')
     db[key] = model[Object.keys(model)[0]]
   })
 
+console.log(db)
 module.exports = db
