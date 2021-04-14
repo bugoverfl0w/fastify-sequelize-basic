@@ -26,6 +26,7 @@ const start = async () => {
 
   fastify.register(require('./routes/public.route'))
   fastify.register(require('./queues/workers'))
+  fastify.register(require('./helpers/mongoose'))
 
   /*
   fastify.addHook('onResponse', (request, reply, done) => {
