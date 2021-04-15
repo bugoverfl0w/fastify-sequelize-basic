@@ -4,12 +4,7 @@ const PORT = process.env.PORT || 3000
 const { verifyToken } = require('./hooks/prehandler')
 
 const start = async () => {
-  fastify.register(require('fastify-formbody'))
-
-  fastify.register(require('fastify-helmet'), { contentSecurityPolicy: false })
-  fastify.register(require('fastify-multipart'), { limits: { fileSize: 102400000 } })
-  fastify.register(require('fastify-compress'), { threshold: 1024 })
-  fastify.register(require('fastify-rate-limit'), { max: 10, timeWindow: '1 second' })
+  fastify.register(require('./init'))
 
   fastify.register((instance, opts, next) => {
     instance.addHook('preHandler', async (req, res) => {
@@ -25,7 +20,6 @@ const start = async () => {
   })
 
   fastify.register(require('./routes/public.route'))
-  fastify.register(require('./queues/workers'))
 
   /*
   fastify.addHook('onResponse', (request, reply, done) => {
@@ -35,9 +29,6 @@ const start = async () => {
   */
 
   try {
-    await fastify.register(require('fastify-express'))
-    fastify.use(require('cors')())
-
     await fastify.listen(PORT, '0.0.0.0')
   } catch (e) {
     fastify.log.error(e)
