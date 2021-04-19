@@ -7,7 +7,7 @@ exports.get = async (url, headers = {}, json = false) => {
     const options = {
       uri: url,
       method: 'GET',
-      headers: 
+      headers: headers
     }
 
     if (json !== false) options.json = json
