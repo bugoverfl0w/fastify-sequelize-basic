@@ -1,10 +1,11 @@
 const initTracer = require('jaeger-client').initTracer
 const opentracing = require('opentracing')
+const { JAEGER } = require('../configs/constant')
 
 const config = {
-  serviceName: 'local-jaeger',
+  serviceName: JAEGER.SERVICE_NAME,
   reporter: {
-    collectorEndpoint: 'http://localhost:14268/api/traces',
+    collectorEndpoint: JAEGER.COLLECTED_ENDPOINT,
     logSpans: true
   },
   sampler: {
