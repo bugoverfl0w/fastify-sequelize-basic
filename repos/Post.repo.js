@@ -1,6 +1,6 @@
 const Post = require('../models').Post
 const { PostRedis } = require('../cache/redis')
-const { CACHE } = require('../configs/constant')
+const { CACHE } = require('../configs/Constant')
 
 exports.getPosts = async () => {
   let posts = await PostRedis.getPosts(true)

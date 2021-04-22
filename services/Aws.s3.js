@@ -1,4 +1,4 @@
-const { uploader } = require('../configs/env')
+const { uploader } = require('../configs/Env')
 const AWS = require('aws-sdk')
 
 // todo: remove ...

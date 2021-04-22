@@ -1,4 +1,4 @@
-const { getPosts, getPost, createPost } = require('../repos/post.repo')
+const { getPosts, getPost, createPost } = require('../repos/Post.repo')
 
 exports.all = async (req, res) => {
   const Posts = await getPosts()

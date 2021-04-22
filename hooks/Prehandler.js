@@ -1,6 +1,6 @@
-const { getToken, getTokenWithUser } = require('../repos/token.repo')
-const { ts } = require('../helpers/string')
-const { NO_TOKEN, INVALID_TOKEN } = require('../configs/constant').ERRORS
+const { getToken, getTokenWithUser } = require('../repos/Token.repo')
+const { ts } = require('../helpers/String')
+const { NO_TOKEN, INVALID_TOKEN } = require('../configs/Constant').ERRORS
 
 exports.verifyToken = async (req, res) => {
   const reqToken = req.headers.token

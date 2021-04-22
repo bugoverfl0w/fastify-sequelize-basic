@@ -1,6 +1,6 @@
 const initTracer = require('jaeger-client').initTracer
 const opentracing = require('opentracing')
-const { JAEGER } = require('../configs/constant')
+const { JAEGER } = require('../configs/Constant')
 
 const config = {
   serviceName: JAEGER.SERVICE_NAME,

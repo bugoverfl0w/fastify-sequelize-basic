@@ -1,4 +1,4 @@
-const configs = require('../configs/env')
+const configs = require('../configs/Env')
 const asyncRedis = require('async-redis')
 
 const redisUri = configs.redis.uri ? configs.redis.uri : 'localhost:6379'

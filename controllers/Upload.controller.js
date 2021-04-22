@@ -1,5 +1,5 @@
-const { localUpload } = require('../uploaders/local')
-const { awsS3Upload } = require('../uploaders/s3')
+const { localUpload } = require('../uploaders/Local')
+const { awsS3Upload } = require('../uploaders/S3')
 
 exports.new = async (req, res) => {
   const data = await req.file()

@@ -1,5 +1,5 @@
 const fastifyPlugin = require('fastify-plugin')
-const { LIMIT } = require('../configs/constant')
+const { LIMIT } = require('../configs/Constant')
 
 async function loadMiddleWares (fastify, opts) {
   fastify.register(require('fastify-formbody'))

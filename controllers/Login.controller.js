@@ -1,6 +1,6 @@
-const { getUserByConditions } = require('../repos/user.repo')
-const { createToken } = require('../repos/token.repo')
-const { ts, randomString } = require('../helpers/string')
+const { getUserByConditions } = require('../repos/User.repo')
+const { createToken } = require('../repos/Token.repo')
+const { ts, randomString } = require('../helpers/String')
 
 exports.login = async (req, res) => {
   const user = await getUserByConditions({

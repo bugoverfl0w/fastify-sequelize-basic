@@ -1,4 +1,4 @@
-const { getUsers, getUser, createUser } = require('../repos/user.repo')
+const { getUsers, getUser, createUser } = require('../repos/User.repo')
 
 exports.all = async (req, res) => {
   const users = await getUsers()

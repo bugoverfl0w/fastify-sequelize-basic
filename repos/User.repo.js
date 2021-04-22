@@ -1,6 +1,6 @@
 const { User, Post } = require('../models')
 const { UserRedis } = require('../cache/redis')
-const { CACHE } = require('../configs/constant')
+const { CACHE } = require('../configs/Constant')
 
 exports.getUsers = async () => {
   let users = await UserRedis.getUsers(true)

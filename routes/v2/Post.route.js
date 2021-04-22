@@ -1,4 +1,4 @@
-const PostController = require('../../controllers/post.controller')
+const PostController = require('../../controllers/Post.controller')
 
 module.exports = function (fastify, opts, next) {
   fastify.get('/posts', PostController.all)
