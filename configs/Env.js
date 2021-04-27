@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   redis: {
     uri: process.env.REDIS_URI,
-    prefix: process.env.REDIS_PREFIX ? process.env.REDIS_PREFIX : ''
+    prefix: process.env.REDIS_PREFIX || ''
   },
   uploader: {
     storage: process.env.UPLOAD_STORAGE || 'file',
