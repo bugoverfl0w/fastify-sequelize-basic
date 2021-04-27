@@ -1,23 +1,38 @@
-const mongoose = require('mongoose')
+const { Model } = require('sequelize')
 
-const Schema = mongoose.Schema
+module.exports = (sequelize, DataTypes) => {
+  class Token extends Model {};
 
-const tokenSchema = new Schema(
-  {
+  Token.init({
+    id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
     token: {
-      type: String
-    },
-    created_time: {
-      type: Number
-    },
-    expired_time: {
-      type: Number
+      type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
-      type: mongoose.Types.ObjectId,
-      ref: 'users'
-    }
-  }
-)
+      type: DataTypes.BIGINT,
+      allowNull: false
+    },
+    created_time: DataTypes.INTEGER,
+    expired_time: DataTypes.INTEGER
+  }, {
+    sequelize
+  })
 
-module.exports.Token = mongoose.model('tokens', tokenSchema)
+  Token.associate = function (models) {
+    Token.belongsTo(models.User, {
+      foreignKey: {
+        name: 'user_id',
+        allowNull: false
+      },
+      as: 'user'
+    })
+  }
+
+  return Token
+}

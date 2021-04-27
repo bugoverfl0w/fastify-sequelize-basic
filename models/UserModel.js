@@ -1,16 +1,36 @@
-const mongoose = require('mongoose')
+const { Model } = require('sequelize')
 
-const Schema = mongoose.Schema
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {};
 
-const userSchema = new Schema(
-  {
+  User.init({
+    id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
     name: {
-      type: String
+      type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
-      type: String
+      type: DataTypes.STRING,
+      allowNull: false
     }
-  }
-)
+  }, {
+    sequelize
+  })
 
-module.exports.User = mongoose.model('users', userSchema)
+  User.associate = function (models) {
+    User.hasMany(models.Post, {
+      foreignKey: {
+        name: 'user_id',
+        allowNull: false
+      },
+      as: 'posts'
+    })
+  }
+
+  return User
+}
