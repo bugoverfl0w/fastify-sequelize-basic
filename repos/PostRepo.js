@@ -1,4 +1,4 @@
-const Post = require('../models').Post
+const { Post } = require('../models')
 const { PostRedis } = require('../cache/redis')
 const { CACHE } = require('../configs/Constant')
 

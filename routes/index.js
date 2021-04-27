@@ -7,15 +7,15 @@ async function allRoutes (fastify, opts) {
       await verifyToken(req, res)
     })
 
-    instance.register(require('./User.route'))
-    instance.register(require('./Post.route'))
-    instance.register(require('./Upload.route'))
+    instance.register(require('./UserRoute'))
+    instance.register(require('./PostRoute'))
+    instance.register(require('./UploadRoute'))
     instance.register(require('./v2'), { prefix: '/v2' })
 
     next()
   })
 
-  fastify.register(require('./Public.route'))
+  fastify.register(require('./PublicRoute'))
 }
 
 module.exports = fastifyPlugin(allRoutes)

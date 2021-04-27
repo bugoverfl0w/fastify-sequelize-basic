@@ -1,5 +1,5 @@
-const LoginController = require('../controllers/Login.controller')
-const UploadController = require('../controllers/Upload.controller')
+const LoginController = require('../controllers/LoginController')
+const UploadController = require('../controllers/UploadController')
 
 module.exports = function (fastify, opts, next) {
   fastify.get('/ping', async function (request, reply) {

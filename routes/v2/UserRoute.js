@@ -1,4 +1,4 @@
-const UserController = require('../../controllers/User.controller')
+const UserController = require('../../controllers/UserController')
 
 module.exports = function (fastify, opts, next) {
   fastify.get('/users', UserController.all)

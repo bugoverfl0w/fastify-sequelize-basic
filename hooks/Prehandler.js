@@ -1,4 +1,4 @@
-const { getToken, getTokenWithUser } = require('../repos/Token.repo')
+const { getToken, getTokenWithUser } = require('../repos/TokenRepo')
 const { ts } = require('../helpers/String')
 const { NO_TOKEN, INVALID_TOKEN } = require('../configs/Constant').ERRORS
 
