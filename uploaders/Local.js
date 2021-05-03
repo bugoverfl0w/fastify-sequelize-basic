@@ -1,8 +1,10 @@
-const { uploader } = require('../configs/Env')
-const fs = require('fs')
-const util = require('util')
-const path = require('path')
-const { pipeline } = require('stream')
+import fs from 'fs'
+import path from 'path'
+import util from 'util'
+import { pipeline } from 'stream'
+
+import { uploader } from 'configs/Env'
+
 const pump = util.promisify(pipeline)
 
 exports.localUpload = async (fileStream) => {

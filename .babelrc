@@ -1,0 +1,23 @@
+{
+	"presets": ["@babel/preset-env"],
+	"plugins": [
+	    ["@babel/transform-runtime"],
+    	["module-resolver", {
+	      "root": ["./src"],
+	      "alias": {
+	      	"cache": "./cache",
+	      	"configs": "./configs",
+	      	"controllers": "./controllers",
+	      	"helpers": "./helpers",
+	      	"hooks": "./hooks",
+	      	"init": "./init",
+	      	"models": "./models",
+	      	"queues": "./queues",
+	      	"repos": "./repos",
+	      	"routes": "./routes",
+	      	"services": "./services",
+	      	"uploaders": "./uploaders",
+	      }
+    	}]
+	]
+}

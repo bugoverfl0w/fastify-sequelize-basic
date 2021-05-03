@@ -1,3 +1,3 @@
-const Queue = require('bee-queue')
+import Queue from 'bee-queue'
 
 module.exports = Queue

@@ -1,4 +1,4 @@
-const { redis } = require('../')
+import { redis } from 'cache'
 
 const KEYS = {
   ALL_USERS: 'get_all_users'

@@ -1,6 +1,6 @@
-const { localUpload } = require('../uploaders/Local')
-const { awsS3Upload } = require('../uploaders/S3')
-const Vnexpress = require('../services/externals/Vnexpress')
+import { localUpload } from 'uploaders/Local'
+import { awsS3Upload } from 'uploaders/S3'
+import Vnexpress from 'services/externals/Vnexpress'
 
 exports.new = async (req, res) => {
   const data = await req.file()
@@ -9,7 +9,8 @@ exports.new = async (req, res) => {
 }
 
 exports.form = async (req, res) => {
-  const html = await Vnexpress.getDetail('https://vnexpress.net/bo-y-te-khan-cap-tim-nguoi-chung-chuyen-bay-tu-nhat-ban-ve-da-nang-4270586.html')
+  // const html = await Vnexpress.getDetail('https://vnexpress.net/bo-y-te-khan-cap-tim-nguoi-chung-chuyen-bay-tu-nhat-ban-ve-da-nang-4270586.html')
+  const html = ''
   const text = `<form action="http://localhost:3333/upload/new" method="post" enctype="multipart/form-data">
   Select image to upload:
   <input type="file" name="fileToUpload" id="fileToUpload">

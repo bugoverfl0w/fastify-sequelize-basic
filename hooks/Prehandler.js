@@ -1,16 +1,16 @@
-const { getToken, getTokenWithUser } = require('../repos/TokenRepo')
-const { ts } = require('../helpers/String')
-const { NO_TOKEN, INVALID_TOKEN } = require('../configs/Constant').ERRORS
+import { getToken, getTokenWithUser } from 'repos/TokenRepo'
+import { ts } from 'helpers/String'
+import { ERRORS } from 'configs/Constant'
 
 exports.verifyToken = async (req, res) => {
   const reqToken = req.headers.token
-  if (process.env.NODE_ENV === 'localhost' && false) return true
+  if (process.env.NODE_ENV === 'localhost') return true
 
   if (!reqToken) {
     res.code(401).send({
       status: false,
-      message: NO_TOKEN.text,
-      err_code: NO_TOKEN.code
+      message: ERRORS.NO_TOKEN.text,
+      err_code: ERRORS.NO_TOKEN.code
     })
   }
 
@@ -19,8 +19,8 @@ exports.verifyToken = async (req, res) => {
   if (!token || token.expired_time < ts()) {
     res.code(401).send({
       status: false,
-      message: INVALID_TOKEN.text,
-      err_code: INVALID_TOKEN.code
+      message: ERRORS.INVALID_TOKEN.text,
+      err_code: ERRORS.INVALID_TOKEN.code
     })
   }
 }

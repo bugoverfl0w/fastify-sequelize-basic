@@ -1,4 +1,4 @@
-const { getUsers, getUser, createUser } = require('../repos/UserRepo')
+import { getUsers, getUser, createUser } from 'repos/UserRepo'
 
 exports.all = async (req, res) => {
   const users = await getUsers()

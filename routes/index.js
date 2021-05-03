@@ -1,5 +1,5 @@
-const fastifyPlugin = require('fastify-plugin')
-const { verifyToken } = require('../hooks/Prehandler')
+import FastifyPlugin from 'fastify-plugin'
+import { verifyToken } from 'hooks/Prehandler'
 
 async function allRoutes (fastify, opts) {
   fastify.register((instance, opts, next) => {
@@ -18,4 +18,4 @@ async function allRoutes (fastify, opts) {
   fastify.register(require('./PublicRoute'))
 }
 
-module.exports = fastifyPlugin(allRoutes)
+module.exports = FastifyPlugin(allRoutes)

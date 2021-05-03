@@ -1,4 +1,4 @@
-const request = require('request')
+import request from 'request'
 
 exports.get = async (url, headers = {}, json = false) => {
   return new Promise(async (resolve, reject) => {

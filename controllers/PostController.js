@@ -1,4 +1,4 @@
-const { getPosts, getPost, createPost } = require('../repos/PostRepo')
+import { getPosts, getPost, createPost } from 'repos/PostRepo'
 
 exports.all = async (req, res) => {
   const Posts = await getPosts()

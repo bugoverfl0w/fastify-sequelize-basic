@@ -1,6 +1,6 @@
-const { User, Post } = require('../models')
-const { UserRedis } = require('../cache/redis')
-const { CACHE } = require('../configs/Constant')
+import { User, Post } from 'models'
+import { UserRedis } from 'cache/redis'
+import { CACHE } from 'configs/Constant'
 
 exports.getUsers = async () => {
   let users = await UserRedis.getUsers(true)

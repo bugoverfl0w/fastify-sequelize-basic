@@ -1,4 +1,4 @@
-const PostController = require('../controllers/PostController')
+import PostController from 'controllers/PostController'
 
 module.exports = function (fastify, opts, next) {
   fastify.all('/posts', PostController.all)

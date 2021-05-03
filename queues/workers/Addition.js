@@ -1,4 +1,4 @@
-const Queue = require('../Bee')
+import Queue from 'queues/Bee'
 
 module.exports = function (fastify, opts, next) {
   const addQueue = new Queue('addition')

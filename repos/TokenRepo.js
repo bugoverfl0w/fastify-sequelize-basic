@@ -1,4 +1,4 @@
-const { Token, User } = require('../models')
+import { Token, User } from 'models'
 
 exports.createToken = async (data) => {
   return (await Token.create(data))

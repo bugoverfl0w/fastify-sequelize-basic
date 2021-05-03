@@ -1,8 +1,7 @@
-const { uploader } = require('../configs/Env')
-const AWS = require('aws-sdk')
+import { uploader } from 'configs/Env'
+import AWS from 'aws-sdk'
 
 // todo: remove ...
-
 exports.upload = async (fileStream) => {
   const s3 = new AWS.S3({
     accessKeyId: uploader.aws.key,

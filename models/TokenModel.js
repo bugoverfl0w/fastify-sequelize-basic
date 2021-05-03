@@ -1,4 +1,4 @@
-const { Model } = require('sequelize')
+import { Model } from 'sequelize'
 
 module.exports = (sequelize, DataTypes) => {
   class Token extends Model {};

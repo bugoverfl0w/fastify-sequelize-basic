@@ -1,6 +1,8 @@
-const initTracer = require('jaeger-client').initTracer
-const opentracing = require('opentracing')
-const { JAEGER } = require('../configs/Constant')
+import tracerClient from 'jaeger-client'
+import opentracing from 'opentracing'
+import { JAEGER } from 'configs/Constant'
+
+const initTracer = tracerClient.initTracer
 
 const config = {
   serviceName: JAEGER.SERVICE_NAME,
