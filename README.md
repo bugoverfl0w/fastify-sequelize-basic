@@ -1,7 +1,6 @@
 # stack
 - Nodejs Fastify
 - MySQL/Postgres Sequelize
-- Mongodb mongoose
 - Redis
 - Bee queue
 - Jaeger tracer
@@ -13,10 +12,6 @@
     - sequelize db:create
     - sequelize db:migrate
 
-- Mongodb Mongoose
-    - update .env
-        - MONGO_URI
-
 - check package.json, remove packages you don't need to use
     - bee-queue: queues management using bee queue
     - opentracing, jaeger-client: distributed log tracing using jaeger
@@ -24,4 +19,4 @@
 - npm install
 
 # run
-node index.js
+npm start
