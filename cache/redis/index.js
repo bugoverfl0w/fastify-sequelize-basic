@@ -15,7 +15,7 @@ fs
       .split('.')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join('')
-    objects[`${key}Redis`] = obj
+    objects[key] = obj
   })
 
 module.exports = objects

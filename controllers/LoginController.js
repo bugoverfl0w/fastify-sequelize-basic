@@ -13,8 +13,11 @@ exports.login = async (req, res) => {
       status: false,
       message: 'invalid user'
     })
+
+    return
   }
 
+  console.log('dis')
   const token = await createToken({
     token: randomString(),
     user_id: user.id,

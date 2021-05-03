@@ -5,9 +5,9 @@ exports.createToken = async (data) => {
 }
 
 exports.getTokenWithUser = async (conditions) => {
-  return (await Token.findOne(conditions).populate('user_id'))
+  return (await Token.findOne(conditions))
 }
 
 exports.getToken = async (conditions) => {
-  return (await Token.findOne(conditions))
+  return (await Token.findOne({ where: conditions }))
 }
