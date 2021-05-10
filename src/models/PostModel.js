@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         name: 'user_id',
         allowNull: false
       },
-      as: 'user'
+      required: true
     })
   }
 

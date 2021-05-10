@@ -1,4 +1,4 @@
-import { getPosts, getPost, createPost } from 'repos/PostRepo'
+import { getPosts, getPost, createPost, createPosts, deleteById } from 'repos/PostRepo'
 
 exports.all = async (req, res) => {
   const Posts = await getPosts()
@@ -18,4 +18,14 @@ exports.create = async (req, res) => {
 exports.get = async (req, res) => {
   const post = await getPost(req.params.id)
   res.send(post)
+}
+
+exports.createPosts = async (req, res) => {
+  const posts = await createPosts(req.data)
+  res.send(posts)
+}
+
+exports.deletePost = async (req, res) => {
+  const status = await deleteById(req.params.id)
+  res.send({ status: status })
 }

@@ -1,4 +1,7 @@
-import { Token, User } from 'models'
+import {
+  Token as TokenModel,
+  User as UserModel
+} from 'models'
 
 exports.createToken = async (data) => {
   return (await Token.create(data))

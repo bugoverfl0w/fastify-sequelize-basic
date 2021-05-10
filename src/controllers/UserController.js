@@ -1,4 +1,5 @@
 import { getUsers, getUser, createUser } from 'repos/UserRepo'
+import ElasticSearch from 'services/externals/ElasticSearch'
 
 exports.all = async (req, res) => {
   const users = await getUsers()
@@ -16,5 +17,9 @@ exports.create = async (req, res) => {
 
 exports.get = async (req, res) => {
   const user = await getUser(req.params.id)
-  res.send(user)
+  const item = await ElasticSearch.findItem(1)
+  res.send({
+    user: user,
+    item: item
+  })
 }

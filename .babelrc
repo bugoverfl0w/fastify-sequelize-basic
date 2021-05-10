@@ -1,23 +1,38 @@
 {
-	"presets": ["@babel/preset-env"],
-	"plugins": [
-	    ["@babel/transform-runtime"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "15"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
     	["module-resolver", {
 	      "root": ["./src"],
 	      "alias": {
-	      	"cache": "./cache",
-	      	"configs": "./configs",
-	      	"controllers": "./controllers",
-	      	"helpers": "./helpers",
-	      	"hooks": "./hooks",
-	      	"init": "./init",
-	      	"models": "./models",
-	      	"queues": "./queues",
-	      	"repos": "./repos",
-	      	"routes": "./routes",
-	      	"services": "./services",
-	      	"uploaders": "./uploaders",
+	      	"cache": "./src/cache",
+	      	"configs": "./src/configs",
+	      	"controllers": "./src/controllers",
+	      	"helpers": "./src/helpers",
+	      	"hooks": "./src/hooks",
+	      	"init": "./src/init",
+	      	"models": "./src/models",
+	      	"queues": "./src/queues",
+	      	"repos": "./src/repos",
+	      	"routes": "./src/routes",
+	      	"services": "./src/services",
+	      	"uploaders": "./src/uploaders",
 	      }
     	}]
-	]
+	],
+  "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js", "node_modules", "build"],
+  "env": {
+    "development" : {
+      "compact": false
+    }
+  }
 }

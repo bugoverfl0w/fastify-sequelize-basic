@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 module.exports = {
   redis: {
     uri: process.env.REDIS_URI,
@@ -18,5 +16,6 @@ module.exports = {
       bucket: process.env.S3_BUCKET_NAME,
       region: process.env.S3_REGION || ''
     }
-  }
+  },
+  es_host: process.env.ES_HOST
 }

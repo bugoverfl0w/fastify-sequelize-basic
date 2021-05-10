@@ -1,4 +1,7 @@
-import { User, Post } from 'models'
+import {
+  User as UserModel,
+  Post as PostModel
+} from 'models'
 import { UserRedis } from 'cache/redis'
 import { CACHE } from 'configs/Constant'
 
@@ -8,25 +11,22 @@ exports.getUsers = async () => {
     return users
   }
 
-  users = await User.findAll()
+  users = await UserModel.findAll()
   await UserRedis.setUsers(users, CACHE.MINUTE(30), true)
 
   return users
 }
 
 exports.getUser = async (id) => {
-  return (await User.findByPk(id, {
-    include: [{
-      model: Post,
-      as: 'posts'
-    }]
+  return (await UserModel.findByPk(id, {
+    include: PostModel
   }))
 }
 
 exports.getUserByConditions = async (conditions) => {
-  return (await User.findOne({ where: conditions }))
+  return (await UserModel.findOne({ where: conditions }))
 }
 
 exports.createUser = async (data) => {
-  return (await User.create(data))
+  return (await UserModel.create(data))
 }
