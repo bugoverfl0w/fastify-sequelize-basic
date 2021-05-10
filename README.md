@@ -19,4 +19,5 @@
 - npm install
 
 # run
-npm start
+- npm run build
+- cd build; node index.js
