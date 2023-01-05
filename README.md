@@ -11,6 +11,7 @@
     	- DB_DRIVER: postgres/mysql
     - sequelize db:create
     - sequelize db:migrate
+    - test appota.com
 
 - check package.json, remove packages you don't need to use
     - bee-queue: queues management using bee queue
